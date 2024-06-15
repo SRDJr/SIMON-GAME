@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1 id="level-title">Simon Game Rules</h1>
+  <div class="rules-container">
+    <ol>
+      <li>When you start the game, a random color will flash, indicating the beginning of the sequence.</li>
+      <li>Your task is to memorize the sequence of colors.</li>
+      <li>Repeat the sequence by clicking on the color buttons in the correct order.</li>
+      <li>If you successfully repeat the sequence, the game will add one more color to the sequence and repeat steps 2 and 3.</li>
+      <li>If you make a mistake and click the wrong color, the game will end.</li>
+      <li>When the game ends, you can start a new game by pressing any key.</li>
+      <li>Try to get as far as you can and beat your high score!</li>
+    </ol>
+  </div>
+  <br><br><br>
+
+  <div class="container">
+    <a href="/"><button class="button-92" id="back-button" role="button" onclick="playSound()">BACK TO HOME</button></a>
+    <a href="/play"><button class="button-92" id="play-button" role="button" onclick="playSound()">PLAY GAME</button></a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- including jQuery -->
+
+  <script>
+    $(document).ready(function() {
+      var buttonClickSound = new Audio("sounds/button-click.mp3");
+      buttonClickSound.load();
+      $("#back-button").on("click", function() {
+        playButtonClickSound();
+      });
+      $("#play-button").on("click", function() {
+        playButtonClickSound();
+      });
+
+      function playButtonClickSound() {
+        buttonClickSound.currentTime = 0; 
+        buttonClickSound.play();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

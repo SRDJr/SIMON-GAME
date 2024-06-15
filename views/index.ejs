@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <br><br><br><br><br><br>
+  <h1 id="level-title">WELCOME TO THE SIMON GAME!!</h1>
+  <div class="container">
+    <a href="/play"><button class="button-92" id="play-button" role="button" onclick="playSound()">PLAY</button></a>
+    <a href="/rules"><button class="button-92" id="rules-button" role="button" onclick="playSound()">RULES</button></a>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!--includig jquery-->
+
+  <script>
+    $(document).ready(function () {
+      var buttonClickSound = new Audio("sounds/button-click.mp3");
+      buttonClickSound.load();
+
+      $("#play-button").on("click", function () {
+        playButtonClickSound();
+      });
+
+      $("#rules-button").on("click", function () {
+        playButtonClickSound();
+      });
+
+      function playButtonClickSound() {
+        buttonClickSound.currentTime = 0; 
+        buttonClickSound.play();
+      }
+    });
+  </script>
+
+</body>
+
+</html>
